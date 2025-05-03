@@ -21,7 +21,8 @@ It is designed as a **shared backend** for projects in the **Open Virtual Steeri
 
 This project allows users to explore a range of input devices for **steering control in virtual cycling worlds**. The emphasis is on **enhancing interactivity and user experience** through both **accessible** and **innovative** control methods.
 
-| HID Focus | ESP-Bluedroid & ESP-NimBLE Repository | Bluefruit Repository |
+| HID Focus | ESP-Bluedroid & 
+ESP-NimBLE Repository | Bluefruit Repository |
 |-----------|-------------------|----------------------|
 | Buttons, Joysticks, Rotary Encoders | [`OVS-DiscreteHIDs`](https://github.com/Berg0162/Open-Virtual-Steering-DiscreteHID) | [`OVS-DiscreteHIDs-Bluefruit`](https://github.com/Berg0162/Open-Virtual-Steering-DiscreteHID-Bluefruit) |
 | Turn & lean-based steering with MPU6050 | [`OVS-MotionIMU`](https://github.com/Berg0162/Open-Virtual-Steering-MotionIMU) | [`OVS-MotionIMU-Bluefruit`](https://github.com/Berg0162/Open-Virtual-Steering-MotionIMU-Bluefruit) |
