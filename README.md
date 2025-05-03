@@ -1,4 +1,4 @@
-# <img src="/media/ESP32_Icon.png" width="110" height="34" align="bottom" alt="ESP32 Icon"> Open Virtual Steering - NimBLESteeringServer
+# <img src="/media/ESP32_Icon.png" width="110" height="34" align="bottom" alt="ESP32 Icon"> Open Virtual Steering - BLESteeringServer
 The **Romans** knew it already **`"Sterzare Necesse Est"`** (free after Plutarch) and it is still valid in a **virtual cycling world**.<br>
 <details><summary>What is means</summary>
     
@@ -11,7 +11,7 @@ It provides examples of alternative input methods for **navigating and positioni
 
 ## 📦 What Is This?
 
-**NimBLESteeringServer** is an open-source, Arduino-compatible C++ library that provides a **reusable Bluetooth Low Energy (BLE) server** implementation for transmitting **steering data** to virtual cycling platforms, for use with the **Espressif ESP32 SoC's**.
+**BLESteeringServer** is an open-source, Arduino-compatible C++ library that provides a **reusable Bluetooth Low Energy (BLE) server** implementation for transmitting **steering data** to virtual cycling platforms, for use with the **Espressif ESP32 SoC's**.
 
 It is designed as a **shared backend** for projects in the **Open Virtual Steering** ecosystem and supports pairing with BLE clients that recognize a known **steering profile** used in commercial platforms.
 
@@ -21,22 +21,30 @@ It is designed as a **shared backend** for projects in the **Open Virtual Steeri
 
 This project allows users to explore a range of input devices for **steering control in virtual cycling worlds**. The emphasis is on **enhancing interactivity and user experience** through both **accessible** and **innovative** control methods.
 
-| HID Focus | NimBLE Repository | Bluefruit Repository |
+| HID Focus | BLE Repository | Bluefruit Repository |
 |-----------|-------------------|----------------------|
 | Buttons, Joysticks, Rotary Encoders | [`OVS-DiscreteHIDs`](https://github.com/Berg0162/Open-Virtual-Steering-DiscreteHID) | [`OVS-DiscreteHIDs-Bluefruit`](https://github.com/Berg0162/Open-Virtual-Steering-DiscreteHID-Bluefruit) |
 | Turn & lean-based steering with MPU6050 | [`OVS-MotionIMU`](https://github.com/Berg0162/Open-Virtual-Steering-MotionIMU) | [`OVS-MotionIMU-Bluefruit`](https://github.com/Berg0162/Open-Virtual-Steering-MotionIMU-Bluefruit) |
 | Voice-activated steering with TinyML | [`OVS-VoiceControl`](https://github.com/Berg0162/Open-Virtual-Steering-VoiceControl) | ℹ️ |
-> ℹ️ The **VoiceControl** project is tightly coupled to the **XIAO ESP32S3 Sense**, which includes a built-in microphone and supports only **NimBLE (ESP32)**. A Bluefruit version is not applicable.
+> ℹ️ The **VoiceControl** project is tightly coupled to the **XIAO ESP32S3 Sense**, which includes a built-in microphone and supports only **ESP32**. A Bluefruit version is not applicable.
 > 
-## ❓ What is NimBLE?
-NimBLE is a completely open source Bluetooth Low Energy stack produced by [Apache](https://github.com/apache/mynewt-nimble).
-It is more suited to resource constrained devices than **bluedroid** and has now been ported by [h2zero](https://github.com/h2zero) to the ESP32 by Espressif.
+## ❓ What is ESP-Bluedroid?
+ESP-Bluedroid is a modified version of the native Android Bluetooth stack, Bluedroid. The Bluetooth LE stack in ESP-IDF is a layered architecture that enables Bluetooth functionality on ESP32 chip series. It consists of two layers: the Bluetooth Upper Layer (BTU) and the Bluetooth Transport Controller layer (BTC).<br>
+ESP-Bluedroid for ESP32 supports Classic Bluetooth and Bluetooth LE.
+
++ API references
+
+[Bluetooth® Common](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/bt_common.html)
+
+[Bluetooth LE](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/bt_le.html)
+
+[Bluetooth LE 4.2 Application Examples](https://github.com/espressif/esp-idf/tree/v5.4.1/examples/bluetooth/bluedroid/ble)
 
 ## 🔧 How the code works
 
-With the **NimBLESteeringServer** library installed, developers can easily create applications that act as **dedicated BLE steering controllers** for use with **virtual cycling platforms**.
+With the **BLESteeringServer** library installed, developers can easily create applications that act as **dedicated BLE steering controllers** for use with **virtual cycling platforms**.
 
-The user application is responsible for interfacing with a **Human Interface Device (HID)** — such as buttons, a joystick, an IMU, or voice input — and regularly passing steering data to the NimBLESteeringServer.
+The user application is responsible for interfacing with a **Human Interface Device (HID)** — such as buttons, a joystick, an IMU, or voice input — and regularly passing steering data to the BLESteeringServer.
 
 Once paired with a BLE client, the application uses `BLESteeringServer::updateSteeringValue()` to transmit real-time **steering angle data** over Bluetooth.
 
@@ -52,15 +60,13 @@ To ensure **interoperability**, the library implements a known **BLE Steering Pr
 ## 🧱 Dependencies
 
 + [Arduino core for ESP32](https://github.com/espressif/arduino-esp32)
-+ [NimBLE-Arduino version 2.x](https://github.com/h2zero/NimBLE-Arduino)
 
-+ **Supported MCU's** with **NimBLE-Arduino**
++ **Supported MCU's** with **Bluedroid**
     - Espressif: ESP32, ESP32C3, ESP32S3
-    - Nordic: nRF51, nRF52 series (**Requires** using [n-able arduino core](https://github.com/h2zero/n-able-Arduino))
 
 ## 🚴‍♂️ Quick start?
 
-+ Install the **NimBLESteeringServer library** from this repository. Download as `.zip` and extract to `Arduino/libraries` folder, or <br>in <b>Arduino IDE</b> from `Sketch menu` -> `Include library` -> `Add .Zip library`<br>
++ Install the **BLESteeringServer library** from this repository. Download as `.zip` and extract to `Arduino/libraries` folder, or <br>in <b>Arduino IDE</b> from `Sketch menu` -> `Include library` -> `Add .Zip library`<br>
 + Select one of the _**Related Repositories**_ that apply this **shared backend** and offer you **ready-to-use exemplary access** to a selection of different **Human-Interface-Devices**.
 
 ## ⚠️ Disclaimer
@@ -78,12 +84,12 @@ If you are a <b>rights holder</b> and believe that this project includes content
 </details>
 
 ## 🧪 Testing & Validation
-The functionality of **Open Virtual Steering with NimBLESteeringServer** was tested using **standard BLE debugging tools** to ensure proper communication and responsiveness. One of the primary tools used was **nRF Connect for Mobile**, a widely available application for **scanning, connecting, and interacting with BLE devices**. This allowed for **verification of characteristic read/write operations, response timing, and general stability** of the BLE communication.  
+The functionality of **Open Virtual Steering with BLESteeringServer** was tested using **standard BLE debugging tools** to ensure proper communication and responsiveness. One of the primary tools used was **nRF Connect for Mobile**, a widely available application for **scanning, connecting, and interacting with BLE devices**. This allowed for **verification of characteristic read/write operations, response timing, and general stability** of the BLE communication.  
 
 ## 🔧 Basic Usage
 
 ```cpp
-#include <NimBLESteeringServer.h>
+#include <BLESteeringServer.h>
 
 void setup() {
     BLESteeringServer::getInstance().begin();
