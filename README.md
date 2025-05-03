@@ -37,7 +37,7 @@ There are two hosts, **ESP-Bluedroid** and **ESP-NimBLE**. The major difference 
 + **ESP-Bluedroid** supports both Classic Bluetooth and Bluetooth LE, while **ESP-NimBLE** only supports Bluetooth LE.
 
 ## ❓ What is ESP-Bluedroid?
-**Espressif** has modified a version of the native Android Bluetooth stack: **ESP-Bluedroid**. When you have installed the **Arduino core for ESP32-Bluedroid is the default BLE-host**. The Bluetooth LE stack in ESP-IDF is a layered architecture that enables Bluetooth functionality on ESP32 chip series. It consists of two layers: the Bluetooth Upper Layer (BTU) and the Bluetooth Transport Controller layer (BTC).<br>
+**Espressif** has modified a version of the native Android Bluetooth stack: **ESP-Bluedroid**. When you have installed the **Arduino core for ESP32**, the default BLE-Host is **ESP-Bluedroid**. The Bluetooth LE stack in ESP-IDF is a layered architecture that enables Bluetooth functionality on ESP32 chip series. It consists of two layers: the Bluetooth Upper Layer (BTU) and the Bluetooth Transport Controller layer (BTC).<br>
 ESP-Bluedroid for ESP32 supports Classic Bluetooth and Bluetooth LE.
 
 + API references
