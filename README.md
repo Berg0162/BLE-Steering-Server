@@ -21,15 +21,23 @@ It is designed as a **shared backend** for projects in the **Open Virtual Steeri
 
 This project allows users to explore a range of input devices for **steering control in virtual cycling worlds**. The emphasis is on **enhancing interactivity and user experience** through both **accessible** and **innovative** control methods.
 
-| HID Focus | ESP32 Repository | Bluefruit Repository |
+| HID Focus | ESP-Bluedroid & ESP-NimBLE Repository | Bluefruit Repository |
 |-----------|-------------------|----------------------|
 | Buttons, Joysticks, Rotary Encoders | [`OVS-DiscreteHIDs`](https://github.com/Berg0162/Open-Virtual-Steering-DiscreteHID) | [`OVS-DiscreteHIDs-Bluefruit`](https://github.com/Berg0162/Open-Virtual-Steering-DiscreteHID-Bluefruit) |
 | Turn & lean-based steering with MPU6050 | [`OVS-MotionIMU`](https://github.com/Berg0162/Open-Virtual-Steering-MotionIMU) | [`OVS-MotionIMU-Bluefruit`](https://github.com/Berg0162/Open-Virtual-Steering-MotionIMU-Bluefruit) |
 | Voice-activated steering with TinyML | [`OVS-VoiceControl`](https://github.com/Berg0162/Open-Virtual-Steering-VoiceControl) | ℹ️ |
 > ℹ️ The **VoiceControl** project is tightly coupled to the **XIAO ESP32S3 Sense**, which includes a built-in microphone and supports only **ESP32**. A Bluefruit version is not applicable.
-> 
+
+## BLE-Hosts
+
+There are two hosts, **ESP-Bluedroid** and **ESP-NimBLE**. The major difference between them is as follows:
+
++ Although both support Bluetooth LE, **ESP-NimBLE** requires less heap and flash size.
+
++ **ESP-Bluedroid** supports both Classic Bluetooth and Bluetooth LE, while **ESP-NimBLE** only supports Bluetooth LE.
+
 ## ❓ What is ESP-Bluedroid?
-ESP-Bluedroid is a modified version (by Espressif) of the native Android Bluetooth stack. When you have installed the **Arduino core for ESP32** Bluedroid is the default BLE-host. The Bluetooth LE stack in ESP-IDF is a layered architecture that enables Bluetooth functionality on ESP32 chip series. It consists of two layers: the Bluetooth Upper Layer (BTU) and the Bluetooth Transport Controller layer (BTC).<br>
+ESP-Bluedroid is a modified version (by Espressif) of the native Android Bluetooth stack. When you have installed the **Arduino core for ESP32** Bluedroid is **the default BLE-host**. The Bluetooth LE stack in ESP-IDF is a layered architecture that enables Bluetooth functionality on ESP32 chip series. It consists of two layers: the Bluetooth Upper Layer (BTU) and the Bluetooth Transport Controller layer (BTC).<br>
 ESP-Bluedroid for ESP32 supports Classic Bluetooth and Bluetooth LE.
 
 + API references
