@@ -26,7 +26,7 @@ This project allows users to explore a range of input devices for **steering con
 | Buttons, Joysticks, Rotary Encoders | [`OVS-DiscreteHIDs`](https://github.com/Berg0162/Open-Virtual-Steering-DiscreteHID) | [`OVS-DiscreteHIDs-Bluefruit`](https://github.com/Berg0162/Open-Virtual-Steering-DiscreteHID-Bluefruit) |
 | Turn & lean-based steering with MPU6050 | [`OVS-MotionIMU`](https://github.com/Berg0162/Open-Virtual-Steering-MotionIMU) | [`OVS-MotionIMU-Bluefruit`](https://github.com/Berg0162/Open-Virtual-Steering-MotionIMU-Bluefruit) |
 | Voice-activated steering with TinyML | [`OVS-VoiceControl`](https://github.com/Berg0162/Open-Virtual-Steering-VoiceControl) | ℹ️ |
-> ℹ️ The **VoiceControl** project is tightly coupled to the **XIAO ESP32S3 Sense**, which includes a built-in microphone and supports only **ESP32**. A Bluefruit version is not applicable.
+> ℹ️ The **VoiceControl** project is tightly coupled to the **XIAO ESP32S3 Sense**, which includes a built-in microphone and supports only **ESP32 BLE-Hosts**. A Bluefruit version is not applicable.
 
 ## ESP32 BLE-Hosts
 
