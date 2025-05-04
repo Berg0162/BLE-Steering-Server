@@ -28,7 +28,7 @@ This project allows users to explore a range of input devices for **steering con
 | Voice-activated steering with TinyML | [`OVS-VoiceControl`](https://github.com/Berg0162/Open-Virtual-Steering-VoiceControl) | ℹ️ |
 > ℹ️ The **VoiceControl** project is tightly coupled to the **XIAO ESP32S3 Sense**, which includes a built-in microphone and supports only **ESP32 BLE-Hosts**. A Bluefruit version is not applicable.
 
-## ESP32 BLE-Hosts
+## 🪄 ESP32 BLE-Hosts
 
 There are two hosts, **ESP-Bluedroid** and **ESP-NimBLE**. The major difference between them is as follows:
 
@@ -40,13 +40,7 @@ There are two hosts, **ESP-Bluedroid** and **ESP-NimBLE**. The major difference 
 **Espressif** has modified a version of the native Android Bluetooth stack: **ESP-Bluedroid**. When you have installed the **Arduino core for ESP32**, the default BLE-Host is **ESP-Bluedroid**. The Bluetooth LE stack in ESP-IDF is a layered architecture that enables Bluetooth functionality on ESP32 chip series. It consists of two layers: the Bluetooth Upper Layer (BTU) and the Bluetooth Transport Controller layer (BTC).<br>
 ESP-Bluedroid for ESP32 supports Classic Bluetooth and Bluetooth LE.
 
-+ API references
-
-[Bluetooth® Common](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/bt_common.html)
-
-[Bluetooth LE](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/bt_le.html)
-
-[Bluetooth LE 4.2 Application Examples](https://github.com/espressif/esp-idf/tree/v5.4.1/examples/bluetooth/bluedroid/ble)
++ API references: (1) [Bluetooth® Common](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/bt_common.html)  (2) [Bluetooth LE](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/bt_le.html)  (3) [Bluetooth LE 4.2 Application Examples](https://github.com/espressif/esp-idf/tree/v5.4.1/examples/bluetooth/bluedroid/ble)
 
 ## 🔧 How the code works
 
