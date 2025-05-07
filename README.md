@@ -40,13 +40,11 @@ There are two hosts, **ESP-Bluedroid** and **ESP-NimBLE**. The major difference 
 **Bluefruit** is Adafruit's branding for its line of development boards and firmware built around Nordic Semiconductor's nRF52 family of Bluetooth Low Energy (BLE) chips. This line is **also** supported by the **Open Virtual Steering** project. See: [Bluefruit-Steering-Server](https://github.com/Berg0162/Bluefruit-Steering-Server)
 
 ## ❓ What is ESP-Bluedroid?
-**Espressif** has modified a version of the native Android Bluetooth stack: **ESP-Bluedroid**. When you have installed the **Arduino core for ESP32**, the default BLE-Host is **ESP-Bluedroid**. The Bluetooth LE stack in ESP-IDF is a layered architecture that enables Bluetooth functionality on ESP32 chip series. It consists of two layers: the Bluetooth Upper Layer (BTU) and the Bluetooth Transport Controller layer (BTC).<br>
+**Espressif** has in the past modified a version of the native Android Bluetooth stack: **ESP-Bluedroid**, today it is referenced as **ESP32 BLE for Arduino**. When you have installed the **Arduino core for ESP32**, the default BLE-Host is **ESP32 BLE for Arduino**. The Bluetooth LE stack in ESP-IDF is a layered architecture that enables Bluetooth functionality on ESP32 chip series. It consists of two layers: the Bluetooth Upper Layer (BTU) and the Bluetooth Transport Controller layer (BTC).<br>
 ESP-Bluedroid for ESP32 supports Classic Bluetooth and Bluetooth LE.
 
 + API references:<br>
-    + [Bluetooth® Common](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/bt_common.html)
-    + [Bluetooth LE](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/bluetooth/bt_le.html)
-+ [Bluetooth LE 4.2 Application Examples](https://github.com/espressif/esp-idf/tree/v5.4.1/examples/bluetooth/bluedroid/ble)
+    + [Arduino-ESP32 BLE](https://github.com/espressif/arduino-esp32/tree/master/libraries/BLE)
 
 ## 🔧 How the code works
 
