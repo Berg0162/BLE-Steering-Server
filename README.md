@@ -40,11 +40,12 @@ There are two hosts, **ESP-Bluedroid** and **ESP-NimBLE**. The major difference 
 **Bluefruit** is Adafruit's branding for its line of development boards and firmware built around Nordic Semiconductor's nRF52 family of Bluetooth Low Energy (BLE) chips. This line is **also** supported by the **Open Virtual Steering** project. See: [Bluefruit-Steering-Server](https://github.com/Berg0162/Bluefruit-Steering-Server)
 
 ## ❓ What is ESP-Bluedroid?
-**Espressif** has in the past modified a version of the native Android Bluetooth stack: **ESP-Bluedroid**, today it is referenced as **ESP32 BLE for Arduino**. When you have installed the **Arduino core for ESP32**, the default BLE-Host is **ESP32 BLE for Arduino**. The Bluetooth LE stack in ESP-IDF is a layered architecture that enables Bluetooth functionality on ESP32 chip series. It consists of two layers: the Bluetooth Upper Layer (BTU) and the Bluetooth Transport Controller layer (BTC).<br>
-ESP-Bluedroid for ESP32 supports Classic Bluetooth and Bluetooth LE.
+**Espressif** has in the past modified a version of the native Android Bluetooth stack and called it: **ESP-Bluedroid**. It is the official Bluetooth stack developed by Espressif, part of the ESP-IDF (Espressif IoT Development Framework). It implements full BLE and Classic Bluetooth functionality.
+**ESP32 BLE for Arduino** is an Arduino wrapper around the **Bluedroid stack**, maintained by Espressif in the **arduino-esp32 core**. It provides an **Arduino-friendly BLE API**, allowing users to work with BLE using C++ classes like `BLEServer`, `BLECharacteristic`, etc.
+The Arduino BLE classes (e.g., `BLEServer`, `BLECharacteristic`) internally call and depend on the **Bluedroid stack** to manage all Bluetooth operations. So, the Arduino library is a higher-level interface that uses **Bluedroid** under the hood.
 
 + API references:<br>
-    + [Arduino-ESP32 BLE](https://github.com/espressif/arduino-esp32/tree/master/libraries/BLE)
+    + [Arduino-ESP32 BLE for Arduino](https://github.com/espressif/arduino-esp32/tree/master/libraries/BLE)
 
 ## 🔧 How the code works
 
