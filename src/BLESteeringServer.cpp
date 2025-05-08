@@ -48,13 +48,24 @@ class ServerCallbacks : public BLEServerCallbacks {
     };
 
     void onDisconnect(BLEServer* pServer, esp_ble_gatts_cb_param_t *param) {
-#ifdef DEBUG
       // Get some connection parameters of the peer device.
       uint8_t address[6];
       memcpy(&address, param->connect.remote_bda, 6);
+      if(BLESteeringServer::getInstance().pSteeringChar_Notify_Enabled == true) {
+         DEBUG_PRINTLN("Central Notify Disabled SteeringChar (30)");
+         BLESteeringServer::getInstance().pSteeringChar_Notify_Enabled = false;
+      }
+      if(BLESteeringServer::getInstance().pTxChar_Indicate_Enabled == true) {
+         DEBUG_PRINTLN("Central Indicate Disabled TxChar (32)");
+         BLESteeringServer::getInstance().pTxChar_Indicate_Enabled = false;
+      }
+      if(BLESteeringServer::getInstance().pBatteryChar_Notify_Enabled == true) {
+         DEBUG_PRINTLN("Central Notify Disabled BatteryChar (0x2A19)");
+         BLESteeringServer::getInstance().pBatteryChar_Notify_Enabled = false;
+      }
       DEBUG_PRINT("Server disconnected from Client with MAC Address: ");
       BLESteeringServer::getInstance().printPeerAddress(address);
-#endif
+
       BLESteeringServer::getInstance().isConnected = false;
       BLEDevice::startAdvertising();
     }
