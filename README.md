@@ -1,9 +1,15 @@
 # <img src="/media/ESP32_Icon.png" width="110" height="34" align="bottom" alt="ESP32 Icon"> Open Virtual Steering - BLESteeringServer
 The **Romans** knew it already **`"Sterzare Necesse Est"`** (free after Plutarch) and it is still valid in a **virtual cycling world**.<br>
-<details><summary>What is means</summary>
-    
-The original quote **Navigare Necesse Est** ("Navigation is Necessary"), was humourously adapted here, by replacing **Navigare** with the Italian verb for [**steering**](https://en.wiktionary.org/wiki/sterzare), aligning it with the project's theme.
 
+<details>
+<summary>What it means</summary>
+  
+The phrase is a playful remix of the Latin saying **"Navigare Necesse Est"** ("To sail is necessary"). Replacing _Navigare_ with [**Sterzare**](https://en.wiktionary.org/wiki/sterzare) — the Italian verb for _steering_ — reflects the project’s goal: enhancing interaction through alternative Human Interface Devices (HIDs).<br>
+
++ More autonomy: increased user-experience
+  + Ride the optimal line through a corner
+  + Turn left or right at intersections
+  + Tactical positioning in a group
 </details>
 
 **Open Virtual Steering (OVS)** is an open-source project that explores interfacing with various **Human-Interface-Devices (HID)** for the **use case of steering control** in **virtual cycling platforms**.
