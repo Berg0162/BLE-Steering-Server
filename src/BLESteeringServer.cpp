@@ -40,17 +40,19 @@ class ServerCallbacks : public BLEServerCallbacks {
       // Get some connection parameters of the peer device.
       uint8_t address[6];
       memcpy(&address, param->connect.remote_bda, 6);
-      DEBUG_PRINT("Server connected to Client with MAC Address: ");
-      BLESteeringServer::getInstance().printPeerAddress(address);
+      std::string full_addr = BLESteeringServer::getInstance().toString(address);
+      DEBUG_PRINTF("Server connected to Client with MAC Address: [%s]\n", full_addr.c_str());
 #endif
       BLEDevice::stopAdvertising();
       BLESteeringServer::getInstance().isConnected = true;
     };
 
     void onDisconnect(BLEServer* pServer, esp_ble_gatts_cb_param_t *param) {
+#ifdef DEBUG
       // Get some connection parameters of the peer device.
       uint8_t address[6];
       memcpy(&address, param->connect.remote_bda, 6);
+#endif
       if(BLESteeringServer::getInstance().pSteeringChar_Notify_Enabled == true) {
          DEBUG_PRINTLN("Central Notify Disabled SteeringChar (30)");
          BLESteeringServer::getInstance().pSteeringChar_Notify_Enabled = false;
@@ -63,9 +65,10 @@ class ServerCallbacks : public BLEServerCallbacks {
          DEBUG_PRINTLN("Central Notify Disabled BatteryChar (0x2A19)");
          BLESteeringServer::getInstance().pBatteryChar_Notify_Enabled = false;
       }
-      DEBUG_PRINT("Server disconnected from Client with MAC Address: ");
-      BLESteeringServer::getInstance().printPeerAddress(address);
-
+#ifdef DEBUG
+      std::string full_addr = BLESteeringServer::getInstance().toString(address);
+      DEBUG_PRINTF("Server disconnected from Client with MAC Address: [%s]\n", full_addr.c_str());
+#endif
       BLESteeringServer::getInstance().isConnected = false;
       BLEDevice::startAdvertising();
     }
@@ -180,12 +183,13 @@ void BLESteeringServer::begin(void) {
     DEBUG_PRINTLN("Start Advertising...");  
 }
 
-void BLESteeringServer::printPeerAddress(uint8_t addr[6]) {
-    for (int i = 1; i < 6; i++) {
-      // Display byte by byte in HEX reverse: little Endian
-      DEBUG_PRINTF("%02X:",addr[(6-i)], HEX);
-    }
-   DEBUG_PRINTF("%02X\n",addr[0], HEX);
+// Uppercase alternative to Address <string>
+std::string BLESteeringServer::toString(uint8_t macAddress[6]) {
+  char stringMAC[18]; // 6*2 bytes + 5 colons + 1 null terminator = 18
+  // Undo Little Endian machine-representation
+  snprintf(stringMAC, sizeof(stringMAC), "%02X:%02X:%02X:%02X:%02X:%02X", macAddress[5], macAddress[4], \
+           macAddress[3], macAddress[2], macAddress[1], macAddress[0]); // byte by byte in HEX --> UPPERCASE
+  return std::string(stringMAC);
 }
 
 float BLESteeringServer::constrainSteerAngle(float angle) {

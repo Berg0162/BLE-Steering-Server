@@ -2,6 +2,7 @@
 #define BLE STEERING_SERVER_H
 
 #include <arduino.h>
+#include <string>
 #include <BLEDevice.h>
 #include <BLEUtils.h>
 #include <BLEServer.h>
@@ -21,7 +22,7 @@ public:
     bool pBatteryChar_Notify_Enabled = false; 
     bool isConnected = false;
 
-    void printPeerAddress(uint8_t addr[6]);
+    std::string toString(uint8_t macAddress[6]);
 
 private:
     // Singleton
