@@ -17,7 +17,7 @@ It provides examples of alternative input methods for **navigating and positioni
 
 ## 📦 What Is This?
 
-**BLESteeringServer** is an open-source, Arduino-compatible C++ library that provides a **reusable Bluetooth Low Energy (BLE) server** implementation for transmitting **steering data** to virtual cycling platforms, for use with the **Espressif ESP32 SoC's**.
+**BLESteeringServer** is an open-source, Arduino-compatible C++ library that provides a **reusable Bluetooth Low Energy (BLE) server** implementation for transmitting **steering data** to virtual cycling platforms, for use with the **Espressif ESP32 SoC's** and the **arduino-esp32 core**.
 
 It is designed as a **shared backend** for projects in the **Open Virtual Steering** ecosystem and supports pairing with BLE clients that recognize a known **steering profile** used in commercial platforms.
 
@@ -34,6 +34,9 @@ This project allows users to explore a range of input devices for **steering con
 | Voice-activated steering with TinyML | [`OVS-VoiceControl`](https://github.com/Berg0162/Open-Virtual-Steering-VoiceControl) | ℹ️ |
 > ℹ️ The **VoiceControl** project is tightly coupled to the **XIAO ESP32S3 Sense**, which includes a built-in microphone and supports only **ESP32 BLE-Hosts**. A Bluefruit version is not applicable.
 
+## ℹ️ nRF52 Bluefruit-Host Support
+**Bluefruit** is Adafruit's branding for its line of development boards and firmware built around Nordic Semiconductor's nRF52 family of Bluetooth Low Energy (BLE) chips. This line is **also** supported by the **Open Virtual Steering** project. See: [Bluefruit-Steering-Server](https://github.com/Berg0162/Bluefruit-Steering-Server)
+
 ## 🪄 ESP32 BLE-Hosts
 
 There are two hosts, **ESP-Bluedroid** and **ESP-NimBLE**. The major difference between them is as follows:
@@ -41,9 +44,6 @@ There are two hosts, **ESP-Bluedroid** and **ESP-NimBLE**. The major difference 
 + Although both support Bluetooth LE, **ESP-NimBLE** requires less heap and flash size.
 
 + **ESP-Bluedroid** supports both Classic Bluetooth and Bluetooth LE, while **ESP-NimBLE** only supports Bluetooth LE.
-
-## ℹ️ nRF52 Bluefruit-Host Support
-**Bluefruit** is Adafruit's branding for its line of development boards and firmware built around Nordic Semiconductor's nRF52 family of Bluetooth Low Energy (BLE) chips. This line is **also** supported by the **Open Virtual Steering** project. See: [Bluefruit-Steering-Server](https://github.com/Berg0162/Bluefruit-Steering-Server)
 
 ## ❓ What is ESP-Bluedroid?
 **Espressif** has in the past modified a version of the native Android Bluetooth stack and called it: **ESP-Bluedroid**. It is the official Bluetooth stack developed by Espressif, part of the ESP-IDF (Espressif IoT Development Framework). It implements full BLE and Classic Bluetooth functionality.
