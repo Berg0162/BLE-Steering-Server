@@ -75,7 +75,8 @@ To ensure **interoperability**, the library implements a known **BLE Steering Pr
 + [Arduino core for ESP32](https://github.com/espressif/arduino-esp32)
 
 + **Supported MCU's** with **Bluedroid**
-    - Espressif: ESP32, ESP32-S3, ESP32-C2, ESP32-C3, ESP32-C6, ESP32-H2
+    - On older ESP32 chips (ESP32, ESP32-S2), Bluedroid is traditionally enabled.
+    - On newer chips (ESP32-S3, ESP32-C3, ESP32-C6), Espressif moved toward NimBLE by default (lower memory footprint, better performance).
 
 ## 🚴‍♂️ Quick start?
 
