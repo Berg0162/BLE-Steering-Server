@@ -9,6 +9,10 @@
 #include <BLEAdvertising.h>
 #include <BLE2902.h>
 
+#ifndef CONFIG_BLUEDROID_ENABLED
+#error "Bluedroid is disabled for this board/core. Use NimBLE-Arduino instead."
+#endif
+
 class BLESteeringServer : public BLEServerCallbacks, public BLECharacteristicCallbacks, public BLEDescriptorCallbacks {
 public:
     static BLESteeringServer& getInstance();
