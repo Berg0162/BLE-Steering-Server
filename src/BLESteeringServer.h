@@ -9,9 +9,7 @@
 #include <BLEAdvertising.h>
 #include <BLE2902.h>
 
-#ifndef CONFIG_BLUEDROID_ENABLED
-#error "Bluedroid is disabled for this board/core. Use NimBLE-Arduino instead."
-#endif
+#if defined(CONFIG_BLUEDROID_ENABLED) || defined(CONFIG_NIMBLE_ENABLED)
 
 class BLESteeringServer : public BLEServerCallbacks, public BLECharacteristicCallbacks, public BLEDescriptorCallbacks {
 public:
@@ -54,5 +52,8 @@ private:
     uint8_t defaultBatteryLevel = 100;
 
 };
+
+#else #error "Arduino-esp32 Bluedroid or NimBLE are NOT enabled!"
+#endif // BLUEDROID || NIMBLE
 
 #endif // BLE STEERING_SERVER_H
